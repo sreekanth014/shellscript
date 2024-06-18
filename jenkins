@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Print Welcome Message') {
+            steps {
+                echo 'welcome'
+            }
+        }
+        stage('Print Today Date') {
+            steps {
+                script {
+                    def currentDate = new Date().toString()
+                    echo "today date and time: ${currentDate}"
+                }
+            }
+        }
+    }
+}
